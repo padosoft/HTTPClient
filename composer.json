@@ -1,0 +1,40 @@
+{
+    "name": "@@@vendor/@@@package_name",
+    "description": "@@@package_description",
+    "keywords" : [@@@keywords
+    ],
+    "homepage":"https://github.org/@@@vendor/@@@package_name/",
+    "license" : "MIT",
+    "authors" : [
+    	{
+    		"name" : "padosoft",
+    		"email" : "helpdesk@padosoft.com",
+    		"homepage" : "https://www.padosoft.com",
+    		"role" : "Developer"
+    	}
+    ],
+	"require": {
+
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1",
+        "phpmd/phpmd": "2.*",
+        "squizlabs/php_codesniffer": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Padosoft\\@@@package_name\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Padosoft\\@@@package_name\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
