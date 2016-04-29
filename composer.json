@@ -1,9 +1,9 @@
 {
-    "name": "@@@vendor/@@@package_name",
+    "name": "Padosoft/HTTPClient",
     "description": "@@@package_description",
-    "keywords" : [@@@keywords
+    "keywords" : ["HTTPClient"
     ],
-    "homepage":"https://github.org/@@@vendor/@@@package_name/",
+    "homepage":"https://github.org/Padosoft/HTTPClient/",
     "license" : "MIT",
     "authors" : [
     	{
@@ -14,22 +14,24 @@
     	}
     ],
 	"require": {
-
+        "guzzlehttp/guzzle": "^6.1",
+        "psr/log": "~1.0"
     },
     "require-dev": {
         "phpunit/phpunit" : "4.*",
         "scrutinizer/ocular": "~1.1",
         "phpmd/phpmd": "2.*",
-        "squizlabs/php_codesniffer": "2.*"
+        "squizlabs/php_codesniffer": "2.*",
+        "padosoft/test": "~0.1"
     },
     "autoload": {
         "psr-4": {
-            "Padosoft\\@@@package_name\\": "src"
+            "Padosoft\\HTTPClient\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Padosoft\\@@@package_name\\Test\\": "tests"
+            "Padosoft\\HTTPClient\\Test\\": "tests"
         }
     },
     "extra": {
