@@ -8,6 +8,7 @@
 
 namespace Padosoft\HTTPClient\Test;
 
+use Padosoft\HTTPClient\GuzzleMockTools;
 use Padosoft\HTTPClient\HTTPClient;
 use Padosoft\HTTPClient\RequestHelper;
 use Padosoft\HTTPClient\TypeAuthentication;
@@ -18,42 +19,96 @@ use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\HandlerStack;
+use \GuzzleHttp\Exception;
+use \GuzzleHttp\Exception\ClientException;
+use \GuzzleHttp\Exception\RequestException;
+use \GuzzleHttp\Exception\BadResponseException;
+use \GuzzleHttp\Exception\ServerException;
+use \GuzzleHttp\Exception\TooManyRedirectsException;
+use \GuzzleHttp\Exception\ConnectException;
+use \GuzzleHttp\Exception\TransferException;
+
 
 
 class HttpHelperTest extends \Padosoft\Test\TestBase
 {
+    
+    use GuzzleMockTools;
     /** @test */
-    public function testHttpHelper() {
+    /*public function testHttpHelper() {
         $objguzzle=new Client();
         $requestHelper = new RequestHelper();
-        $requestHelper  ->setAuth('alevento','129895ale',TypeAuthentication::BASIC)
+        $requestHelper  ->setAuth('padosoft','xxxxxx',TypeAuthentication::BASIC)
                         ->setJson(['name'=>'cix'])
                         ->setHttpErrorsTrue();
 
 
         $req = new HTTPClient($objguzzle,$requestHelper);
-        $req->sendRequest(MethodHttpHelper::POST,'https://api.github.com/orgs/b2msrl/repos');
+        $req->sendRequest(MethodHttpHelper::POST,'https://api.github.com/orgs/padosoft/repos');
 
 
 
-    }
+    }*/
 
-    public function testExceptionWithMockHandler()
+    public function testExceptionHttpHelperWithMockHandler()
     {
-        // Create a mock and queue two responses.
-        $mock = new MockHandler([
-            //new Response(200, ['X-Foo' => 'Bar']),
-            //new Response(202, ['Content-Length' => 0]),
-            new RequestException("Error Communicating with Server", new Request('GET', 'test')),
-            new ClientException("Client error",new Request('GET', 'test'),new Response(202, []),null,[])
-        ]);
+        // Create a mock and queue exceptions.
 
+        $mock = new MockHandler();
+        $this->addAllException(MethodHttpHelper::POST, $mock);
         $handler = HandlerStack::create($mock);
-        $client = new Client(['handler' => $handler]);
 
-        $sensio = new SensiolabHelper($client,$this->mockCommand);
-        //$this->assertEquals(null,$sensio->getSensiolabVulnerabilties(__DIR__.'/test_file/composer_ko/composer.lock'));
-        //$this->assertEquals(null,$sensio->getSensiolabVulnerabilties(__DIR__.'/test_file/composer_ko/composer.lock'));
+        $client = new Client(['handler' => $handler]);
+        
+        $requestHelper = new RequestHelper();
+        $requestHelper  ->setAuth('alevento','129895ale',TypeAuthentication::BASIC)
+            ->setJson(['name'=>'cix'])
+            ->setHttpErrorsTrue();
+
+
+        $req = new HTTPClient($client,$requestHelper);
+        try {
+            $req->sendRequest(MethodHttpHelper::POST,'test');
+        } catch (\Exception $ex) {
+            $this->assertRegExp('/Client error/',$ex->getMessage());
+        }
+        try {
+            $req->sendRequest(MethodHttpHelper::POST,'test');
+        } catch (\Exception $ex) {
+            $this->assertRegExp('/Server error/',$ex->getMessage());
+        }
+        try {
+            $req->sendRequest(MethodHttpHelper::POST,'test');
+        } catch (\Exception $ex) {
+            $this->assertRegExp('/Bad response error/',$ex->getMessage());
+        }
+        try {
+            $req->sendRequest(MethodHttpHelper::POST,'test');
+        } catch (\Exception $ex) {
+            $this->assertRegExp('/Connect error/',$ex->getMessage());
+        }
+        try {
+            $req->sendRequest(MethodHttpHelper::POST,'test');
+        } catch (\Exception $ex) {
+            $this->assertRegExp('/Too many redirect error/',$ex->getMessage());
+        }
+        try {
+            $req->sendRequest(MethodHttpHelper::POST,'test');
+        } catch (\Exception $ex) {
+            $this->assertRegExp('/Request error/',$ex->getMessage());
+        }
+        try {
+            $req->sendRequest(MethodHttpHelper::POST,'test');
+        } catch (\Exception $ex) {
+            $this->assertRegExp('/Transfer error/',$ex->getMessage());
+        }
+        try {
+            $req->sendRequest(MethodHttpHelper::POST,'test');
+        } catch (\Exception $ex) {
+            $this->assertRegExp('/Runtime error/',$ex->getMessage());
+        }
+        
+
 
     }
 
