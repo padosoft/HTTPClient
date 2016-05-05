@@ -1,7 +1,7 @@
 {
-    "name": "Padosoft/HTTPClient",
-    "description": "@@@package_description",
-    "keywords" : ["HTTPClient"
+    "name": "padosoft/httpclient",
+    "description": "helper for http client guzzle",
+    "keywords" : ["httplient"
     ],
     "homepage":"https://github.org/Padosoft/HTTPClient/",
     "license" : "MIT",
