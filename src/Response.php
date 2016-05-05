@@ -5,12 +5,13 @@
 
 namespace Padosoft\HTTPClient;
 
+use GuzzleHttp\Psr7\Response as GuzzleResponse;
 
 class Response
 {
-    protected $status_code;
-    protected $body;
-    protected $psr7response;
+    protected $status_code = -1;
+    protected $body = '';
+    protected $psr7response = null;
 
 
     public function __get($property) {

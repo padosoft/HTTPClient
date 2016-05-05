@@ -5,11 +5,22 @@
 
 namespace Padosoft\HTTPClient;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
+
+use Padosoft\HTTPClient\Response;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
-
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Exception;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\BadResponseException;
+use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Exception\TooManyRedirectsException;
+use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\TransferException;
 
 class HTTPClient
 {
@@ -31,11 +42,11 @@ class HTTPClient
 
     public function sendRequest($method ,$uri = null )
     {
-        $this->response = null;
+        $this->response = new Response();
         try {
             $responseStatusCode='';
             $this->setLog(LogLevel::INFO,'request '.$method.' at '.$uri,$this->options);
-            $this->response->psr7response = $this->httpclient->request($method ,$uri , $this->options );
+            $this->response->psr7response = $this->httpclient->request($method ,$uri, $this->options );
             $this->response->body = $this->response->psr7response->getBody()->getContents();
             $this->response->status_code =  $this->response->psr7response->getStatusCode();
             $this->setLog(LogLevel::INFO,'response ',['status code'=>$this->response->status_code,'body'=>$this->response->body]);

@@ -700,16 +700,16 @@
         },
         {
             "name": "padosoft/test",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/padosoft/test.git",
-                "reference": "1c920bd40ca2cb8f29c1b99c5c70b9d88b432200"
+                "reference": "e154679d003da0082957e1cbefa86e88de7e918c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padosoft/test/zipball/1c920bd40ca2cb8f29c1b99c5c70b9d88b432200",
-                "reference": "1c920bd40ca2cb8f29c1b99c5c70b9d88b432200",
+                "url": "https://api.github.com/repos/padosoft/test/zipball/e154679d003da0082957e1cbefa86e88de7e918c",
+                "reference": "e154679d003da0082957e1cbefa86e88de7e918c",
                 "shasum": ""
             },
             "require": {
@@ -739,7 +739,7 @@
             "keywords": [
                 "test"
             ],
-            "time": "2016-02-02 10:43:43"
+            "time": "2016-05-02 17:03:30"
         },
         {
             "name": "pdepend/pdepend",
