@@ -103,7 +103,7 @@ class RequestHelper
      * handler has the `cookie` middleware. Valid values are `false` and
      * an instance of {@see GuzzleHttp\Cookie\CookieJarInterface}.
      */
-    public function setCookies($cookies)
+    public function setCookies($cookies = true)
     {
         $this->options['cookies'] = $cookies;
         return $this;
@@ -360,7 +360,7 @@ class RequestHelper
      * is insecure!). Set to a string to provide the path to a CA bundle on
      * disk to enable verification using a custom certificate.
      */
-    public function setVerify($verify)
+    public function setVerify($verify=true)
     {
         $this->options['verify']=$verify;
         return $this;

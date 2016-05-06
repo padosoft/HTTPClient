@@ -83,7 +83,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/padosoft/httpclient.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/padosoft/httpclient.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/padosoft/httpclient.svg?style=flat-square
-[ico-sensiolab]: https://insight.sensiolabs.com/projects/@@@sensiolab/small.png
+[ico-sensiolab]: https://insight.sensiolabs.com/projects/9afab5fa-e9e4-40df-8ccf-6c122c26fd42/small.png
 [ico-agnostic]: https://img.shields.io/badge/PHP-Framework%20agnostic-4F5B93.svg?style=flat-square
 [ico-hhvm]: http://hhvm.h4cc.de/badge/padosoft/httpclient.svg
 
@@ -93,5 +93,5 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-scrutinizer]: https://scrutinizer-ci.com/g/padosoft/httpclient/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/padosoft/httpclient
 [link-downloads]: https://packagist.org/packages/padosoft/httpclient
-[link-sensiolab]: https://insight.sensiolabs.com/projects/@@@sensiolabs
+[link-sensiolab]: https://insight.sensiolabs.com/projects/9afab5fa-e9e4-40df-8ccf-6c122c26fd42
 [link-hhvm]: http://hhvm.h4cc.de/package/padosoft/httpclient

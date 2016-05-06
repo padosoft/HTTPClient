@@ -9,25 +9,14 @@
 namespace Padosoft\HTTPClient\Test;
 
 use Padosoft\HTTPClient\HTTPClient;
+use Padosoft\HTTPClient\HttpHelper;
 use Padosoft\HTTPClient\RequestHelper;
 use Padosoft\HTTPClient\TypeAuthentication;
 use Padosoft\HTTPClient\MethodHttpHelper;
 use GuzzleHttp\Client;
 use Padosoft\Test\TestBase;
 use Padosoft\Test\traits\GuzzleMockTools;
-//use Padosoft\HTTPClient\Response as PadosoftResponse;
-/*use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Exception;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Exception\ServerException;
-use GuzzleHttp\Exception\TooManyRedirectsException;
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Exception\TransferException;*/
+
 
 
 
@@ -37,7 +26,15 @@ class HttpHelperTest extends \Padosoft\Test\TestBase
     
     use GuzzleMockTools;
     /** @test */
-    
+
+    public function testHelper() {
+        
+        $client = new Client();
+        $requestHelper = new RequestHelper();
+        
+        $helper = new HttpHelper(new HTTPClient($client,$requestHelper));
+        $helper->sendPostJsonWithAuth('https://api.github.com/orgs/b2msrl/repos','alevento' ,'129895ale' ,['name'=>'trest2'] );
+    }
     
     public function testHttpHelperResponse200() {
 
