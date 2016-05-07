@@ -34,6 +34,8 @@ Table of Contents
 
 # Prerequisites
 
+PHP >=5.5.0
+
 # Install
 
 This package can be installed through Composer.
