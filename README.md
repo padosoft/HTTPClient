@@ -1,7 +1,8 @@
 
 ## WORK IN PROGRESS
 # httpclient
-Helper for http client guzzle
+Very simple HTTP Client using Guzzle to make request more user friendly.
+You start to send HTTP request in minute. 
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -10,7 +11,7 @@ Helper for http client guzzle
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![SensioLabsInsight][ico-sensiolab]][link-sensiolab]
-![Agnostic][ico-agnostic]]
+[![Agnostic][ico-agnostic]]
 [![HHVM Status][ico-hhvm]][link-hhvm]
 
 Table of Contents
