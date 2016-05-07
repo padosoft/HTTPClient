@@ -481,7 +481,7 @@ class RequestHelper
      */
     public function setSslKey($ssl_key)
     {
-        if(!is_array($ssl_key) && !is_string($body))
+        if(!is_array($ssl_key) && !is_string($ssl_key))
         {
             return $this;
         }

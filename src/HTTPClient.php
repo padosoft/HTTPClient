@@ -10,9 +10,6 @@ use Padosoft\HTTPClient\Response;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Exception;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
@@ -203,12 +200,12 @@ class HTTPClient
     }
 
     /**
-     * @param $e
+     * @param \Exception $e
      * @return string
      */
-    public function getResponseStatusCodeFromException($e)
+    public function getResponseStatusCodeFromException(\Exception $e)
     {
-        if (null == $e->getResponse()) {
+        if (null === $e->getResponse()) {
             return '';
         }
         if (! is_a($e->getResponse(), '\GuzzleHttp\Psr7\Response')){
@@ -221,13 +218,13 @@ class HTTPClient
 
     /**
      * Get psr7 headers array and return string representation.
-     * @param \GuzzleHttp\Psr7\Response $psr7response
+     * @param \Psr\Http\Message\ResponseInterface
      * @return string
      */
-    public function getHeadersString(\GuzzleHttp\Psr7\Response $psr7response)
+    public function getHeadersString(\Psr\Http\Message\ResponseInterface $psr7response)
     {
         $strHeaders = '';
-        if($psr7response == null)
+        if($psr7response === null)
         {
             return $strHeaders;
         }

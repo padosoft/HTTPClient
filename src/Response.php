@@ -5,8 +5,6 @@
 
 namespace Padosoft\HTTPClient;
 
-use GuzzleHttp\Psr7\Response as GuzzleResponse;
-
 /**
  * Class Response
  * Wrap psr7 Response object wit body and status code.

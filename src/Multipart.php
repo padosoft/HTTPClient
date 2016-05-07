@@ -5,6 +5,8 @@
 
 namespace Padosoft\HTTPClient;
 
+use Psr\Http\Message\StreamInterface;
+
 /**
  * Class Multipart
  * @package Padosoft\HTTPClient
@@ -47,7 +49,7 @@ class Multipart
      * @param array $headers optional "headers" associative array of custom headers
      * @throws \Exception
      */
-    public function __construct($name, $contents, $filename=null, $headers=null)
+    public function __construct($name, $contents, $filename=null, $headers=[])
     {
         if($name===null || $name==''){
             throw new \Exception("name is mandatory in Multipart!");
@@ -68,7 +70,7 @@ class Multipart
 
         if(!is_array($headers))
         {
-            $this->headers = null;
+            $this->headers = [];
         }
     }
 
@@ -81,7 +83,7 @@ class Multipart
     }
 
     /**
-     * @return null|string
+     * @return string
      */
     public function getFilename()
     {

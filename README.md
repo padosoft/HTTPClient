@@ -92,9 +92,9 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 
 [link-packagist]: https://packagist.org/packages/padosoft/httpclient
-[link-travis]: https://travis-ci.org/padosoft/httpclient
-[link-scrutinizer]: https://scrutinizer-ci.com/g/padosoft/httpclient/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/padosoft/httpclient
+[link-travis]: https://travis-ci.org/padosoft/HTTPClient
+[link-scrutinizer]: https://scrutinizer-ci.com/g/padosoft/HTTPClient/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/padosoft/HTTPClient
 [link-downloads]: https://packagist.org/packages/padosoft/httpclient
 [link-sensiolab]: https://insight.sensiolabs.com/projects/9afab5fa-e9e4-40df-8ccf-6c122c26fd42
 [link-hhvm]: http://hhvm.h4cc.de/package/padosoft/httpclient

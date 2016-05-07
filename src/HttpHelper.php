@@ -5,10 +5,7 @@
 
 namespace Padosoft\HTTPClient;
 
-use Psr\Log\LoggerInterface;
-use Padosoft\HTTPClient\RequestHelper;
 use Padosoft\HTTPClient\MethodHttpHelper;
-use GuzzleHttp\Client;
 
 /**
  * Class HttpHelper
