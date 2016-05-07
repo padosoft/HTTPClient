@@ -11,7 +11,7 @@ You start to send HTTP request in minute.
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![SensioLabsInsight][ico-sensiolab]][link-sensiolab]
-[![Agnostic][ico-agnostic]]
+![Agnostic][ico-agnostic]
 [![HHVM Status][ico-hhvm]][link-hhvm]
 
 Table of Contents
