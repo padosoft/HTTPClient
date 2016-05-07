@@ -18,24 +18,25 @@ use Padosoft\Test\TestBase;
 use Padosoft\Test\traits\GuzzleMockTools;
 
 
-
-
-
+/**
+ * Class HttpHelperTest
+ * @package Padosoft\HTTPClient\Test
+ */
 class HttpHelperTest extends \Padosoft\Test\TestBase
 {
-    
+
     use GuzzleMockTools;
     /** @test */
 
     public function testHelper() {
-        
+
         $client = new Client();
         $requestHelper = new RequestHelper();
-        
+
         $helper = new HttpHelper(new HTTPClient($client,$requestHelper));
-        $helper->sendPostJsonWithAuth('https://api.github.com/orgs/b2msrl/repos','alevento' ,'129895ale' ,['name'=>'trest2'] );
+        $helper->sendPostJsonWithAuth('https://api.github.com/orgs/b2msrl/repos',['name'=>'trest2'],'alevento' ,'129895ale');
     }
-    
+
     public function testHttpHelperResponse200() {
 
 
@@ -92,7 +93,7 @@ class HttpHelperTest extends \Padosoft\Test\TestBase
 
 
         //$client = $this->createClientWithAllExceptionMock(MethodHttpHelper::POST);
-        
+
         $requestHelper = new RequestHelper();
         $requestHelper  ->setAuth('padosoft','password',TypeAuthentication::BASIC)
             ->setJson(['name'=>'repoprova'])
@@ -156,7 +157,7 @@ class HttpHelperTest extends \Padosoft\Test\TestBase
         } catch (\Exception $ex) {
             $this->assertRegExp('/Runtime error/',$ex->getMessage());
         }
-        
+
 
 
     }

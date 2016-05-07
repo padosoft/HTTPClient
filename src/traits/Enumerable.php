@@ -1,6 +1,6 @@
 <?php
 
-namespace Padosoft\HTTPClient\Traits;
+namespace Padosoft\HTTPClient\traits;
 
 /**
  * Class Enumerable

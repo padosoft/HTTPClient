@@ -5,7 +5,7 @@
 
 namespace Padosoft\HTTPClient;
 
-use Padosoft\HTTPClient\Traits\Enumerable;
+use Padosoft\HTTPClient\traits\Enumerable;
 
 class MethodHttpHelper
 {
@@ -19,5 +19,4 @@ class MethodHttpHelper
     const PUT='PUT';
     const DELETE='DELETE';
     const TRACE='TRACE';
-
 }

@@ -5,7 +5,7 @@
 
 namespace Padosoft\HTTPClient;
 
-use Padosoft\HTTPClient\Traits\Enumerable;
+use Padosoft\HTTPClient\traits\Enumerable;
 
 class TypeAuthentication
 {
