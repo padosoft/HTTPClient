@@ -16,6 +16,14 @@ use Padosoft\HTTPClient\MethodHttpHelper;
 use GuzzleHttp\Client;
 use Padosoft\Test\TestBase;
 use Padosoft\Test\traits\GuzzleMockTools;
+use GuzzleHttp\Exception;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\BadResponseException;
+use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Exception\TooManyRedirectsException;
+use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\TransferException;
 
 
 /**
@@ -75,7 +83,7 @@ class HttpHelperTest extends \Padosoft\Test\TestBase
             $client = $this->createResponse(400);
             $req = new HTTPClient($client,$requestHelper);
             $req->sendRequest(MethodHttpHelper::POST,'test');
-        } catch (\Exception $ex) {
+        } catch (\GuzzleHttp\Exception\ClientException $ex) {
             $this->assertRegExp('/Client error/',$ex->getMessage());
         }
 
@@ -105,56 +113,56 @@ class HttpHelperTest extends \Padosoft\Test\TestBase
             $client = $this->createClientExceptionMock(MethodHttpHelper::POST);
             $req = new HTTPClient($client,$requestHelper);
             $req->sendRequest(MethodHttpHelper::POST,'test');
-        } catch (\Exception $ex) {
+        } catch (\GuzzleHttp\Exception\ClientException $ex) {
             $this->assertRegExp('/Client error/',$ex->getMessage());
         }
         try {
             $client = $this->createServerExceptionMock(MethodHttpHelper::POST);
             $req = new HTTPClient($client,$requestHelper);
             $req->sendRequest(MethodHttpHelper::POST,'test');
-        } catch (\Exception $ex) {
+        } catch (\GuzzleHttp\Exception\ServerException $ex) {
             $this->assertRegExp('/Server error/',$ex->getMessage());
         }
         try {
             $client = $this->createBadResponseExceptionMock(MethodHttpHelper::POST);
             $req = new HTTPClient($client,$requestHelper);
             $req->sendRequest(MethodHttpHelper::POST,'test');
-        } catch (\Exception $ex) {
+        } catch (\GuzzleHttp\Exception\BadResponseException $ex) {
             $this->assertRegExp('/Bad response error/',$ex->getMessage());
         }
         try {
             $client = $this->createConnectExceptionMock(MethodHttpHelper::POST);
             $req = new HTTPClient($client,$requestHelper);
             $req->sendRequest(MethodHttpHelper::POST,'test');
-        } catch (\Exception $ex) {
+        } catch (\GuzzleHttp\Exception\ConnectException $ex) {
             $this->assertRegExp('/Connect error/',$ex->getMessage());
         }
         try {
             $client = $this->createTooManyRedirectsExceptionMock(MethodHttpHelper::POST);
             $req = new HTTPClient($client,$requestHelper);
             $req->sendRequest(MethodHttpHelper::POST,'test');
-        } catch (\Exception $ex) {
+        } catch (\GuzzleHttp\Exception\TooManyRedirectsException $ex) {
             $this->assertRegExp('/Too many redirect error/',$ex->getMessage());
         }
         try {
             $client = $this->createRequestExceptionMock(MethodHttpHelper::POST);
             $req = new HTTPClient($client,$requestHelper);
             $req->sendRequest(MethodHttpHelper::POST,'test');
-        } catch (\Exception $ex) {
+        } catch (\GuzzleHttp\Exception\RequestException $ex) {
             $this->assertRegExp('/Request error/',$ex->getMessage());
         }
         try {
             $client = $this->createTransferExceptionMock(MethodHttpHelper::POST);
             $req = new HTTPClient($client,$requestHelper);
             $req->sendRequest(MethodHttpHelper::POST,'test');
-        } catch (\Exception $ex) {
+        } catch (\GuzzleHttp\Exception\TransferException $ex) {
             $this->assertRegExp('/Transfer error/',$ex->getMessage());
         }
         try {
             $client = $this->createRuntimeExceptionnMock(MethodHttpHelper::POST);
             $req = new HTTPClient($client,$requestHelper);
             $req->sendRequest(MethodHttpHelper::POST,'test');
-        } catch (\Exception $ex) {
+        } catch (\RuntimeException $ex) {
             $this->assertRegExp('/Runtime error/',$ex->getMessage());
         }
 
