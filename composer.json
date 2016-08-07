@@ -14,7 +14,7 @@
     	}
     ],
 	"require": {
-        "guzzlehttp/guzzle": "^6.1",
+        "guzzlehttp/guzzle": "~6.0",
         "psr/log": "~1.0"
     },
     "require-dev": {
@@ -22,7 +22,7 @@
         "scrutinizer/ocular": "~1.1",
         "phpmd/phpmd": "2.*",
         "squizlabs/php_codesniffer": "2.*",
-        "padosoft/test": "~0.1"
+        "padosoft/test": "0.*"
     },
     "autoload": {
         "psr-4": {
