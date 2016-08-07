@@ -100,7 +100,6 @@ class HTTPClient
             $responseStatusCode = $this->getResponseStatusCodeFromException($e);
             $this->setLog(LogLevel::ERROR,'\GuzzleHttp\Exception\ClientException',['message'=>$e->getMessage(),'path request'=>$e->getRequest()->getUri()->getPath(),'method'=>$e->getRequest()->getMethod(),'response status code'=>$responseStatusCode]);
                                             $this->setLog(LogLevel::DEBUG,'\GuzzleHttp\Exception\ClientException',['trace'=>$e->getTraceAsString()]);
-            //throw new \Exception($e->getMessage().' '.$responseStatusCode,$e->getCode(),$e);
             throw new \GuzzleHttp\Exception\ClientException($e->getMessage().' '.$responseStatusCode,$e->getRequest(),$e->getResponse(),$e,$e->getHandlerContext());
 
         } catch (\GuzzleHttp\Exception\ServerException $e) {
@@ -108,7 +107,6 @@ class HTTPClient
             $responseStatusCode = $this->getResponseStatusCodeFromException($e);
             $this->setLog(LogLevel::ERROR,'\GuzzleHttp\Exception\ServerException',['message'=>$e->getMessage(),'path request'=>$e->getRequest()->getUri()->getPath(),'method'=>$e->getRequest()->getMethod(),'response status code'=>$responseStatusCode]);
             $this->setLog(LogLevel::DEBUG,'\GuzzleHttp\Exception\ServerException',['trace'=>$e->getTraceAsString()]);
-            //throw new \Exception($e->getMessage().' '.$responseStatusCode,$e->getCode(),$e);
             throw new \GuzzleHttp\Exception\ServerException($e->getMessage().' '.$responseStatusCode,$e->getRequest(),$e->getResponse(),$e,$e->getHandlerContext());
 
 
@@ -117,7 +115,6 @@ class HTTPClient
             $responseStatusCode = $this->getResponseStatusCodeFromException($e);
             $this->setLog(LogLevel::ERROR,'\GuzzleHttp\Exception\BadResponseException',['message'=>$e->getMessage(),'path request'=>$e->getRequest()->getUri()->getPath(),'method'=>$e->getRequest()->getMethod(),'response status code'=>$responseStatusCode]);
             $this->setLog(LogLevel::DEBUG,'\GuzzleHttp\Exception\BadResponseException',['trace'=>$e->getTraceAsString()]);
-            //throw new \Exception($e->getMessage().' '.$responseStatusCode,$e->getCode(),$e);
             throw new \GuzzleHttp\Exception\BadResponseException($e->getMessage().' '.$responseStatusCode,$e->getRequest(),$e->getResponse(),$e,$e->getHandlerContext());
 
         } catch (\GuzzleHttp\Exception\ConnectException $e) {
@@ -125,7 +122,6 @@ class HTTPClient
             $responseStatusCode = $this->getResponseStatusCodeFromException($e);
             $this->setLog(LogLevel::ERROR,'\GuzzleHttp\Exception\ConnectException',['message'=>$e->getMessage(),'path request'=>$e->getRequest()->getUri()->getPath(),'method'=>$e->getRequest()->getMethod(),'response status code'=>$responseStatusCode]);
             $this->setLog(LogLevel::DEBUG,'\GuzzleHttp\Exception\ConnectException',['trace'=>$e->getTraceAsString()]);
-            //throw new \Exception($e->getMessage().' '.$responseStatusCode,$e->getCode(),$e);
             throw new \GuzzleHttp\Exception\ConnectException($e->getMessage().' '.$responseStatusCode,$e->getRequest(),$e,$e->getHandlerContext());
 
         } catch (\GuzzleHttp\Exception\TooManyRedirectsException $e) {
@@ -133,7 +129,6 @@ class HTTPClient
             $responseStatusCode = $this->getResponseStatusCodeFromException($e);
             $this->setLog(LogLevel::ERROR,'\GuzzleHttp\Exception\TooManyRedirectsException',['message'=>$e->getMessage(),'path request'=>$e->getRequest()->getUri()->getPath(),'method'=>$e->getRequest()->getMethod(),'response status code'=>$responseStatusCode]);
             $this->setLog(LogLevel::DEBUG,'\GuzzleHttp\Exception\TooManyRedirectsException',['trace'=>$e->getTraceAsString()]);
-            //throw new \Exception($e->getMessage().' '.$responseStatusCode,$e->getCode(),$e);
             throw new \GuzzleHttp\Exception\TooManyRedirectsException($e->getMessage().' '.$responseStatusCode,$e->getRequest(),$e->getResponse(),$e,$e->getHandlerContext());
 
         } catch (\GuzzleHttp\Exception\RequestException $e) {
@@ -141,7 +136,6 @@ class HTTPClient
             $responseStatusCode = $this->getResponseStatusCodeFromException($e);
             $this->setLog(LogLevel::ERROR,'\GuzzleHttp\Exception\RequestException',['message'=>$e->getMessage(),'path request'=>$e->getRequest()->getUri()->getPath(),'method'=>$e->getRequest()->getMethod(),'response status code'=>$responseStatusCode]);
             $this->setLog(LogLevel::DEBUG,'\GuzzleHttp\Exception\RequestException',['trace'=>$e->getTraceAsString()]);
-            //throw new \Exception($e->getMessage().' '.$responseStatusCode,$e->getCode(),$e);
             throw new \GuzzleHttp\Exception\RequestException($e->getMessage().' '.$responseStatusCode,$e->getRequest(),$e->getResponse(),$e,$e->getHandlerContext());
 
         } catch (\GuzzleHttp\Exception\TransferException $e) {
