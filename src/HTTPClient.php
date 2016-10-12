@@ -253,7 +253,9 @@ class HTTPClient
         return $strHeaders;
     }
 
+    public function dummy(){
+        echo '';
+    }
 
 
-    
 }
