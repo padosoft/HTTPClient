@@ -5,7 +5,6 @@
 
 namespace Padosoft\HTTPClient;
 
-use Padosoft\HTTPClient\MethodHttpHelper;
 use GuzzleHttp\Client;
 
 /**
