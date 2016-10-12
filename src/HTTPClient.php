@@ -57,6 +57,8 @@ class HTTPClient
         $this->log = $log;
     }
 
+
+
     /**
      * Send a HTTP Request and return Response or thrown Exception.
      *

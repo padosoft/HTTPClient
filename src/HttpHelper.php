@@ -55,7 +55,7 @@ class HttpHelper
      * @param string $protocolVersion
      * @return Response
      */
-    public  function sendSimpleRequest($method, $uri
+    public function sendSimpleRequest($method, $uri
                                     , array $getParams=[], array $postParams=[]
                                     , $user="", $password=""
                                     , array $jsonParams=[]
@@ -96,6 +96,8 @@ class HttpHelper
 
         return $this->response;
     }
+
+
 
     /**
      * @param $uri

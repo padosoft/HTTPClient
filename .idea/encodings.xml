@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/.github/ISSUE_TEMPLATE.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/.github/PULL_REQUEST_TEMPLATE.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CONTRIBUTING.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/README.md" charset="UTF-8" />
+    <file url="PROJECT" charset="ISO-8859-1" />
+  </component>
+</project>

@@ -58,7 +58,7 @@ class RequestHelper
      */
     public function setAllowRedirects($max=5,$strict=false,$referer=true,$protocolsArray=['http', 'https'],callable $onRedirect=null)
     {
-        if(!isset($max) || !preg_match("/^(0)$|^([1-9][0-9]*)$")) {
+        if(!isset($max) || !preg_match("/^(0)$|^([1-9][0-9]*)$/",$max)) {
             $max=5;
         }
         if(!isset($strict) || !is_bool($strict)) {
