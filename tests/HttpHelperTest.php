@@ -42,7 +42,7 @@ class HttpHelperTest extends \Padosoft\Test\TestBase
         $requestHelper = new RequestHelper();
 
         $helper = new HttpHelper(new HTTPClient($client,$requestHelper));
-        $helper->sendPostJsonWithAuth('https://api.github.com/orgs/b2msrl/repos',['name'=>'trest2'],'alevento' ,'129895ale');
+        $helper->sendPostJsonWithAuth('https://api.github.com/orgs/b2msrl/repos',['name'=>'trest2'],'user' ,'pwd');
     }
 
     public function testHttpHelperResponse200() {
